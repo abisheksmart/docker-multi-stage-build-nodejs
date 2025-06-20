@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: '0b9d36ce-b24d-4222-a90d-077955446142', url: 'https://github.com/your-username/your-repo.git'
+
+                git credentialsId: '0b9d36ce-b24d-4222-a90d-077955446142', url: 'https://github.com/abisheksmart/docker-multi-stage-build-nodejs.git'
             }
         }
 
