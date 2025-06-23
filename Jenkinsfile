@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Building Docker image with tag $IMAGE_NAME:$IMAGE_TAG"
-                DOCKER_BUILDKIT=1 docker build -t $IMAGE_NAME:$IMAGE_TAG .
+                docker build -t $IMAGE_NAME:$IMAGE_TAG .
                 '''
             }
         }
