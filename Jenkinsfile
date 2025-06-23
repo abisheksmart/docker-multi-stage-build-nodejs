@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: '0b9d36ce-b24d-4222-a90d-077955446142', url: 'https://github.com/abisheksmart/docker-multi-stage-build-nodejs.git'
+                git credentialsId: '0b9d36ce-b24d-4222-a90d-077955446142', 
+                    url: 'https://github.com/abisheksmart/docker-multi-stage-build-nodejs.git'
             }
         }
 
@@ -44,11 +45,11 @@ pipeline {
                 docker volume create flask-logs || true
 
                 docker run -d --rm \
-                  --name $CONTAINER_NAME \
-                  --network my-custom-network \
-                  -v flask-logs:/app/logs \
-                  -p 1337:1337 \
-                  $IMAGE_NAME
+                    --name $CONTAINER_NAME \
+                    --network my-custom-network \
+                    -v flask-logs:/app/logs \
+                    -p 1337:1337 \
+                    $IMAGE_NAME
                 '''
             }
         }
